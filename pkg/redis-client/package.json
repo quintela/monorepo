@@ -1,0 +1,26 @@
+{
+  "name": "@optionq/redis-client",
+  "version": "0.6.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/optionq/npm-priv/"
+  },
+  "license": "MIT",
+  "author": "nikolay.podolnyi@optionq.de",
+  "main": "index.js",
+  "dependencies": {
+    "@optionq/process-manager": "^0.7.1",
+    "config": "^3.2.5",
+    "ioredis": "^4.14.1",
+    "lodash": "^4.17.15"
+  },
+  "engines": {
+    "node": ">=12.18.0",
+    "yarn": ">=1.22.1"
+  },
+  "os": [
+    "darwin",
+    "linux",
+    "win32"
+  ]
+}

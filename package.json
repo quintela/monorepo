@@ -1,0 +1,80 @@
+{
+  "name": "npm_priv",
+  "version": "0.0.1",
+  "private": true,
+  "repository": "git@github.com:optionq/npm-priv.git",
+  "license": "MIT",
+  "author": "tiago@optionq.pt",
+  "main": "index.js",
+  "workspaces": [
+    "pkg/*"
+  ],
+  "scripts": {
+    "bootstrap": "lerna run bootstrap",
+    "cm": "git-cz",
+    "coverage": "yarn jest --coverage",
+    "jest": "npx jest -c jest.config.js --detectOpenHandles --runInBand",
+    "jest:unit": "yarn jest --forceExit",
+    "lint": "eslint --cache --ignore-pattern node_modules/ --fix pkg/ --config .eslintrc.js",
+    "prettier": "prettier --write pkg/**/*.js",
+    "test": "yarn lint && yarn coverage"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && yarn test",
+      "pre-push": "lint-staged && yarn lint"
+    }
+  },
+  "lint-staged": {
+    "pkg/**/*.js": [
+      "yarn prettier",
+      "yarn lint",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "engines": {
+    "node": ">=12.18.0",
+    "yarn": ">=1.22.5"
+  },
+  "os": [
+    "darwin",
+    "linux",
+    "win32"
+  ],
+  "collectCoverage": true,
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-proposal-decorators": "^7.10.5",
+    "@babel/preset-env": "^7.11.5",
+    "babel-eslint": "^10.1.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.9.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-filenames": "^1.3.2",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^24.0.2",
+    "eslint-plugin-lodash": "^7.1.0",
+    "eslint-plugin-mocha": "^8.0.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-security": "^1.4.0",
+    "eslint-plugin-sort-class-members": "^1.8.0",
+    "eslint-plugin-sort-imports-es6": "^0.0.3",
+    "eslint-plugin-sort-requires": "^2.1.0",
+    "eslint-plugin-sql-template": "^2.0.0",
+    "faker": "^5.1.0",
+    "gitpkg": "^1.0.0-beta.2",
+    "husky": "^4.3.0",
+    "jest": "^26.4.2",
+    "jest-coverage-badges": "^1.1.2",
+    "lerna": "^3.22.1",
+    "lint-staged": "^10.4.0",
+    "prettier": "^2.1.2",
+    "supertest": "^4.0.2"
+  }
+}

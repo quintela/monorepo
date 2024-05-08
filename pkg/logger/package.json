@@ -1,0 +1,25 @@
+{
+  "name": "@optionq/logger",
+  "version": "0.7.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/optionq/npm-priv/"
+  },
+  "license": "MIT",
+  "author": "tiago@optionq.pt",
+  "main": "index.js",
+  "dependencies": {
+    "bunyan": "^1.8.12",
+    "debug": "^4.1.1",
+    "lodash": "^4.17.20"
+  },
+  "engines": {
+    "node": ">=12.18.0",
+    "yarn": ">=1.22.1"
+  },
+  "os": [
+    "darwin",
+    "linux",
+    "win32"
+  ]
+}

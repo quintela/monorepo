@@ -1,0 +1,10 @@
+docker-compose.override.yml
+coverage/
+config/local.js
+.vscode
+node_modules
+**/node_modules
+*.log
+**/*.log
+.vscode
+.eslintcache

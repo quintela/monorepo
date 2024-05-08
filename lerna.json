@@ -1,0 +1,16 @@
+{
+  "lerna": "2.0.0",
+  "version": "independent",
+  "packages": ["pkg/*"],
+  "command": {
+    "concurrency": 1,
+    "publish": {
+      "conventionalCommits": true,
+      "scope": "@optionq/*",
+      "registry": "https://npm.pkg.github.com"
+    }
+  },
+  "npmClient": "yarn",
+  "npmClientArgs": ["--no-lockfile"],
+  "useWorkspaces": true
+}
